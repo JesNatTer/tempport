@@ -1,0 +1,20 @@
+@media only screen and (max-width:1060px){
+    .testimonialscontent{
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(5, auto);
+    }
+
+    .testimonial{
+        height: auto;
+        width: 70%;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:1060px){
+    .testimonial{
+        height: auto;
+        width: 100%;
+        font-size: 20px;
+    }
+}

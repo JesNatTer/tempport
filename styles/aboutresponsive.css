@@ -1,0 +1,97 @@
+@media only screen and (max-width:1200px){
+    .aboutme{
+        font-size: 2vw;
+    }
+    .aboutdetails1{
+        font-size: 1.5vw;
+    }
+
+}
+
+/* @media only screen and (max-width:980px){
+    .aboutintro{
+        padding: 10px;
+    }
+} */
+
+
+@media only screen and (max-width:1000px){
+    .aboutme{
+        font-size: 2.2vw;
+    }
+
+
+}
+
+@media only screen and (max-width:850px){
+    .aboutintro{
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+    }
+
+    .imagelater{
+        place-self: center;
+        margin: 0;
+        margin-bottom: 50px;
+    }
+
+    .aboutintrotxt{
+        grid-template-rows: auto auto;
+    }
+
+    .aboutme{
+        font-size: 3vw;
+        margin-bottom: 50px;
+    }
+
+    .aboutdetails{
+        height: 200px;
+    }
+    
+    .aboutdetails1{
+        font-size: 2.5vw;
+    }
+
+    .skills{
+        height: auto;
+    }
+
+    .skillscontainer{
+        flex-wrap: wrap;
+    }
+
+    .icon{
+        width: 33.3%;
+        height: 22vh;
+    }
+
+    .icon i{
+        font-size: 15vw;
+    }
+    .icon img{
+        width: 17vw;
+    }
+}
+
+@media only screen and (max-width:650px){
+    .aboutme{
+        font-size: 4vw;
+    }
+
+    .aboutdetails{
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        height: auto;
+    }
+
+    .aboutdetails1{
+        font-size: 3.5vw;
+        text-align: center;
+
+    }
+
+    .aboutdetails ul li{
+        padding: 0;
+        margin: 10px 0;
+    }
+}

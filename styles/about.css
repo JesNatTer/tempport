@@ -1,0 +1,150 @@
+.about{
+    position: absolute;
+    top:100vh;
+    height: 100vh;
+    width: 100vw;
+    transition: 1s ease;
+    z-index: 1111;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    backdrop-filter: blur(15px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.about.active{
+    top:0;
+}
+
+.aboutintro{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 12vh 10vw;
+}
+
+.imagelater{
+    background: url('../images/C8\ Apr21\ Jesse\ Terblanche\ \(1\).JPG');
+    height:75vh;
+    min-width: 80%;
+    margin: 0 100px 0 0;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+}
+
+.aboutintrotxt{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 60% 40%;
+}
+
+.aboutme{
+    font-family: 'Josefin Sans';
+    font-size: 1.9vw;
+}
+
+.aboutme p:first-child{
+    margin-bottom: 40px;
+}
+
+.aboutdetails{
+    height: 100%;
+    width: 100%;
+    border: 1px solid white;
+    align-self: end;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.aboutdetails1{
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+}
+
+.aboutdetails1 ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.aboutdetails ul li{
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.skills{
+    height: 40vh;
+    width: 100%;
+    padding: 40px 10vw;
+    margin-bottom: 50px;
+}
+
+.skills h1{
+    font-family: 'Josefin Sans';
+    font-weight: 300;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.skillscontainer{
+    display: flex;
+    height: 90%;
+}
+
+.icon{
+    width: 25%;
+    height: 90%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon i{
+    font-size: 100px;
+    margin-bottom: 10px;
+}
+
+.icon img{
+    width: 100px;
+}
+
+.icon p{
+    font-size: 20px;
+    font-family: 'Josefin Sans';
+}
+
+.aboutexit{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+
+.aboutexit:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.exit1, .exit2{
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background-color: white;
+    pointer-events: none;
+}
+
+.exit1{
+    transform: rotateZ(45deg);
+}
+
+.exit2{
+    transform: rotateZ(315deg);
+}

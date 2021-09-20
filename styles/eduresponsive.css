@@ -1,0 +1,27 @@
+@media only screen and (max-width:1000px){
+    .wecontainer{
+        height: auto;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+    }
+
+    .worksection{
+        grid-column: 1/2;
+        grid-row: 2;
+    }
+
+    .educationsection{
+        grid-column: 1/2;
+        grid-row: 1;
+    }
+
+    .educationsection, .worksection{
+        grid-template-rows: 50px 200px 150px;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .educationsection, .worksection{
+        grid-template-rows: 50px 300px 150px;
+    }
+}

@@ -1,0 +1,38 @@
+@media only screen and (max-width:980px){
+    .contactcontent{
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+    }
+
+    .contactlinks{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-row: 2;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .contactlink i{
+        margin-right: 3vw;
+    }
+
+    .contactform form input, .contactform form textarea{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width:550px){
+    .contactcontent{
+        padding: 20px 5%;
+        margin-bottom: 20px;
+    }
+
+    .contactlinks{
+        margin-top: 20px;
+    }
+
+    .contactlink a{
+        font-size: 16px;
+    }
+}
