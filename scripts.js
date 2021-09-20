@@ -8,12 +8,11 @@ const canvas = document.querySelector('canvas.circle')
 const scene = new THREE.Scene()
 
 const geometry = new THREE.IcosahedronGeometry(1, 32)
-
 const material = new THREE.MeshStandardMaterial()
 material.wireframe = true
 material.transparent = true
 material.blending = THREE.AdditiveBlending
-material.color= new THREE.Color('black')
+material.color= new THREE.Color('white')
 
 const shape = new THREE.Mesh(geometry,material)
 
@@ -48,7 +47,11 @@ window.addEventListener('resize', () =>
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
 camera.position.y = 0
-camera.position.z = 2.5
+if (document.body.clientWidth < 700){
+    camera.position.z = 4.5    
+}else{
+    camera.position.z = 2.5
+}
 scene.add(camera)
 
 
@@ -82,3 +85,89 @@ const tick = () =>
 }
 
 tick()
+
+
+
+const scontainer = document.querySelector('div.scroller');
+
+let current = 0;
+let target = 0;
+let ease = 0.075;
+
+function lerp(start, end, t){
+  return start * (1-t) + end * t
+}
+
+
+function init(){
+  document.body.style.height = `${document.querySelector('.boxcont').clientWidth - (window.innerWidth - window.innerHeight)}px`
+}
+
+function smscroll(){
+  target = window.scrollY
+  current = lerp(current, target, ease)
+  scontainer.style.transform = `translate3d(${current * -1}px, 0, 0)`
+  requestAnimationFrame(smscroll)
+}
+
+init();
+
+smscroll();
+
+let boxes = document.querySelectorAll('.box')
+boxes.forEach(box => box.addEventListener('click', modal))
+
+function modal(e){
+    if (e.target.classList.contains('aboutbox')){
+        document.querySelector('.about').classList.toggle("active")
+        document.body.style.overflowY = 'hidden'
+        document.querySelectorAll('.box div').forEach(box => box.style.transform = 'translateY(100vh)')
+    }
+    if (e.target.classList.contains('webox')){
+        document.querySelector('.education').classList.toggle("active")
+        document.body.style.overflowY = 'hidden'
+        document.querySelectorAll('.box div').forEach(box => box.style.transform = 'translateY(100vh)')
+    }
+    if (e.target.classList.contains('projectbox')){
+        document.querySelector('.projects').classList.toggle("active")
+        document.body.style.overflowY = 'hidden'
+        document.querySelectorAll('.box div').forEach(box => box.style.transform = 'translateY(100vh)')
+    }
+    if (e.target.classList.contains('testimonialbox')){
+        document.querySelector('.testimonials').classList.toggle("active")
+        document.body.style.overflowY = 'hidden'
+        document.querySelectorAll('.box div').forEach(box => box.style.transform = 'translateY(100vh)')
+    }
+    if (e.target.classList.contains('contactbox')){
+        document.querySelector('.contact').classList.toggle("active")
+        document.body.style.overflowY = 'hidden'
+        document.querySelectorAll('.box div').forEach(box => box.style.transform = 'translateY(100vh)')
+    }
+}
+
+document.querySelector(".eduexit").addEventListener("click", close)
+
+document.querySelector(".aboutexit").addEventListener("click", close)
+
+document.querySelector(".projectsexit").addEventListener("click", close)
+
+document.querySelector(".testimonialsexit").addEventListener("click", close)
+
+document.querySelector(".contactexit").addEventListener("click", close)
+
+
+function close(e){
+    if (e.target.classList.contains("aboutexit")){
+        document.querySelector('.about').classList.toggle("active")
+    }if (e.target.classList.contains("eduexit")){
+        document.querySelector('.education').classList.toggle("active")
+    }if (e.target.classList.contains("projectsexit")){
+        document.querySelector('.projects').classList.toggle("active")
+    }if (e.target.classList.contains("testimonialsexit")){
+        document.querySelector('.testimonials').classList.toggle("active")
+    }if (e.target.classList.contains("contactexit")){
+        document.querySelector('.contact').classList.toggle("active")
+    }
+    document.body.style.overflowY = 'scroll'
+    document.querySelectorAll('.box div').forEach(box => box.style.transform = 'translateY(-0.1vh)')
+}
