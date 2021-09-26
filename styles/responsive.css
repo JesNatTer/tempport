@@ -21,12 +21,24 @@
         font-size: 1.5rem;
     }
 
+    .main{
+        display: grid;
+        justify-content: center;
+    }
+
     .name{
-        left: 29%;
+        margin-top: 30px;
+        position: initial;
+        align-self: start;
+        text-align: center;
+        width: 100%;
     }
 
     .asp{
-        right: 11%;
+        align-self: end;
+        width: 100%;
+        position: initial;
+        margin-bottom: 30px;
     }
 
     .box div{
