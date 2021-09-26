@@ -1,5 +1,9 @@
 import * as THREE from 'https://threejs.org/build/three.module.js'
 
+let vh = window.innerHeight * 0.01;
+
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 const canvas = document.querySelector('canvas.circle')
 
 const scene = new THREE.Scene()
@@ -36,15 +40,15 @@ const sizes = {
 
 window.addEventListener('resize', () =>
 {
-    // Update sizes
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
     sizes.width = window.innerWidth
     sizes.height = window.innerHeight
 
-    // Update camera
     camera.aspect = sizes.width / sizes.height
     camera.updateProjectionMatrix()
 
-    // Update renderer
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
