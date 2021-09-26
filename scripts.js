@@ -1,7 +1,4 @@
 import * as THREE from 'https://threejs.org/build/three.module.js'
-import * as dat from 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.7/build/dat.gui.module.js'
-
-const gui = new dat.GUI()
 
 const canvas = document.querySelector('canvas.circle')
 
